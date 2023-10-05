@@ -1,5 +1,6 @@
 // packages
 import { useState } from "react";
+import Switch from "@mui/material/Switch";
 
 // assets
 import logo from "./assets/logo.svg";
@@ -27,23 +28,9 @@ function App() {
           <div className="mt-4 flex justify-between">
             <img src={logo} alt="logo" />
             {/* Dark/Light Mode Container */}
-            <div className="border border-l-gray-300 border-y-0 border-r-0 w-24 flex items-center justify-end space-x-4">
+            <div className="border border-l-gray-300 border-y-0 border-r-0 w-24 flex items-center justify-end space-x-1">
               {/* Toggle Container */}
-              <div className="container">
-                {label}{" "}
-                <div className="toggle-switch">
-                  <input
-                    type="checkbox"
-                    className="checkbox"
-                    name={label}
-                    id={label}
-                  />
-                  <label className="label" htmlFor={label}>
-                    <span className="inner" />
-                    <span className="switch" />
-                  </label>
-                </div>
-              </div>
+              <Switch />
               <img
                 className="w-6 h-6"
                 src={iconmoon}
