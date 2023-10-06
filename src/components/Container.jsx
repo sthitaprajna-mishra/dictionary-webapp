@@ -12,27 +12,29 @@ import axios from "axios";
 const baseURL = "https://api.dictionaryapi.dev/api/v2/entries/en/";
 
 const Container = () => {
-  const [searchedWord, setSearchedWord] = useState();
+  const [searchedWord, setSearchedWord] = useState("");
   const [result, setResult] = useState();
 
   useEffect(() => {
-    const apiURL = `${baseURL}${searchedWord}`;
+    if (searchedWord.trim() !== "") {
+      const apiURL = `${baseURL}${searchedWord}`;
 
-    console.log(searchedWord);
+      console.log(searchedWord);
 
-    axios
-      .get(apiURL)
-      .then((response) => {
-        console.log(response);
-        const apiResponse = response.data[0];
-        console.log(apiResponse);
-        setResult(apiResponse);
-      })
-      .catch((err) => {
-        console.log("inside error block");
-        console.log(err);
-        console.log(err.response.data);
-      });
+      axios
+        .get(apiURL)
+        .then((response) => {
+          console.log(response);
+          const apiResponse = response.data[0];
+          console.log(apiResponse);
+          setResult(apiResponse);
+        })
+        .catch((err) => {
+          console.log("inside error block");
+          console.log(err);
+          console.log(err.response.data);
+        });
+    }
   }, [searchedWord]);
 
   return (
