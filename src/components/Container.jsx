@@ -20,7 +20,9 @@ const baseURL = "https://api.dictionaryapi.dev/api/v2/entries/en/";
 const Container = () => {
   const [searchedWord, setSearchedWord] = useState("");
   const [result, setResult] = useState();
-  const [audioSrc, setAudioSrc] = useState("");
+  const [audioSrc, setAudioSrc] = useState(
+    "https://api.dictionaryapi.dev/media/pronunciations/en/keyboard-us.mp3"
+  );
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
 
@@ -42,11 +44,18 @@ const Container = () => {
 
           const apiResponse = response.data[0];
           if (apiResponse.phonetics) {
+            let noAudioPresent = true;
             apiResponse.phonetics.map((phonetic) => {
               if (phonetic.audio.length > 0) {
                 setAudioSrc(phonetic.audio);
+                noAudioPresent = false;
               }
             });
+            if (noAudioPresent) {
+              setAudioSrc("");
+            }
+          } else {
+            setAudioSrc("");
           }
           console.log(apiResponse);
           setResult(apiResponse);

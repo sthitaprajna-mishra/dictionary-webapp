@@ -4,7 +4,7 @@ import iconplay from "../assets/icon-play.svg";
 const WordHeading = ({
   word = "keyboard",
   phonetic = "/ˈkibɔɹd/",
-  audioSrc = "",
+  audioSrc,
 }) => {
   const playAudio = () => {
     const audio = new Audio(audioSrc);
@@ -19,15 +19,18 @@ const WordHeading = ({
         </div>
         <div className="text-xl text-accentColor md:text-2xl">{phonetic}</div>
       </div>
-      <div>
-        <button onClick={playAudio}>
-          <img
-            className="h-12 w-12 hover:cursor-pointer transition-all md:h-auto md:w-auto"
-            src={iconplay}
-            alt="play icon"
-          />
-        </button>
-      </div>
+
+      {audioSrc.length > 0 ? (
+        <div>
+          <button onClick={playAudio}>
+            <img
+              className="h-12 w-12 hover:cursor-pointer transition-all md:h-auto md:w-auto"
+              src={iconplay}
+              alt="play icon"
+            />
+          </button>
+        </div>
+      ) : null}
     </div>
   );
 };
