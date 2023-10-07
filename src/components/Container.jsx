@@ -25,12 +25,12 @@ const Container = () => {
       setLoading(true);
       const apiURL = `${baseURL}${searchedWord}`;
 
-      console.log(searchedWord);
+      //   console.log(searchedWord);
 
       axios
         .get(apiURL)
         .then((response) => {
-          console.log(response);
+          //   console.log(response);
           const apiResponse = response.data[0];
           if (apiResponse.phonetics) {
             apiResponse.phonetics.map((phonetic) => {
@@ -45,8 +45,8 @@ const Container = () => {
         })
         .catch((err) => {
           console.log("inside error block");
-          console.log(err);
-          console.log(err.response.data);
+          //   console.log(err);
+          //   console.log(err.response.data);
           setLoading(false);
         });
     }

@@ -1,6 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+  darkMode: "class",
   theme: {
     fontFamily: {
       lora: ["Lora", "serif"],
@@ -11,6 +12,7 @@ export default {
         fontColor: "hsl(0, 0%, 18%)",
         placeholderColor: "hsl(0, 0%, 46%)",
         accentColor: "hsl(274, 82%, 60%)",
+        darkColor1: "hsl(0, 0%, 2%)",
       },
     },
   },
