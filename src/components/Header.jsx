@@ -19,6 +19,7 @@ const Header = () => {
       window.matchMedia("(prefers-color-scheme: dark)").matches
     ) {
       document.documentElement.classList.add("dark");
+      setChecked(true);
       setTheme("dark");
     } else {
       document.documentElement.classList.remove("dark");
