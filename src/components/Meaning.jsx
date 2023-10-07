@@ -2,7 +2,7 @@ import React from "react";
 import Definitions from "./Definitions";
 import SynonymsAntonyms from "./SynonymsAntonyms";
 
-const Meaning = ({ meaning }) => {
+const Meaning = ({ meaning, setSearchedWord }) => {
   return (
     <div className="mt-8">
       <div className="flex items-center space-x-1">
@@ -17,8 +17,16 @@ const Meaning = ({ meaning }) => {
       <div className="mt-6">
         <Definitions definitions={meaning.definitions} />
       </div>
-      <SynonymsAntonyms array={meaning.synonyms} arrayType="Synonyms" />
-      <SynonymsAntonyms array={meaning.antonyms} arrayType="Antonyms" />
+      <SynonymsAntonyms
+        array={meaning.synonyms}
+        arrayType="Synonyms"
+        setSearchedWord={setSearchedWord}
+      />
+      <SynonymsAntonyms
+        array={meaning.antonyms}
+        arrayType="Antonyms"
+        setSearchedWord={setSearchedWord}
+      />
     </div>
   );
 };

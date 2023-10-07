@@ -42,12 +42,18 @@ const defaultMeanings = [
   },
 ];
 
-const Meanings = ({ meanings = defaultMeanings }) => {
+const Meanings = ({ meanings = defaultMeanings, setSearchedWord }) => {
   return (
     <div className="mt-8">
       {meanings ? (
         meanings.map((meaning, id) => {
-          return <Meaning key={id} meaning={meaning} />;
+          return (
+            <Meaning
+              key={id}
+              meaning={meaning}
+              setSearchedWord={setSearchedWord}
+            />
+          );
         })
       ) : (
         <></>

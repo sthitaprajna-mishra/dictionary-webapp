@@ -1,6 +1,6 @@
 import React from "react";
 
-const SynonymsAntonyms = ({ array, arrayType }) => {
+const SynonymsAntonyms = ({ array, arrayType, setSearchedWord }) => {
   return (
     <>
       {array.length > 0 ? (
@@ -13,6 +13,7 @@ const SynonymsAntonyms = ({ array, arrayType }) => {
                   <div
                     key={id}
                     className="text-accentColor text-lg mb-2 mx-1 hover:underline hover:cursor-pointer transition-all"
+                    onClick={() => setSearchedWord(arrayItem)}
                   >
                     {arrayItem}
                   </div>

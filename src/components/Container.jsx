@@ -5,11 +5,13 @@ import { useEffect, useState } from "react";
 import Header from "./Header";
 import Searchbar from "./Searchbar";
 import WordHeading from "./WordHeading";
+import Meanings from "./Meanings";
+import Sources from "./Sources";
 
 // axios
 import axios from "axios";
-import Meanings from "./Meanings";
-import Sources from "./Sources";
+
+// MUI
 import { CircularProgress } from "@mui/material";
 
 // assets
@@ -113,7 +115,10 @@ const Container = () => {
             audioSrc={audioSrc}
           />
           {/* Meanings */}
-          <Meanings meanings={result?.meanings} />
+          <Meanings
+            meanings={result?.meanings}
+            setSearchedWord={setSearchedWord}
+          />
           {/* Source */}
           <Sources sources={result?.sourceUrls} />
         </>
