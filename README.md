@@ -28,6 +28,22 @@ Users will be able to -
 
 ### Screenshots -
 
+#### Mobile Layout (Dark)
+
+<img src="./mobileDark.jpg" height="600">
+
+#### Mobile Layout (Light)
+
+<img src="./mobileLight.jpg" height="600">
+
+#### Desktop Layout (Dark)
+
+![](desktopDark.png)
+
+#### Desktop Layout (Light)
+
+![](desktopLight.png)
+
 ### Links
 
 - [Solution URL](https://vocabsearch.netlify.app/)
@@ -45,6 +61,7 @@ Users will be able to -
 ### Useful resources
 
 - [Frontend Mentor](https://www.frontendmentor.io/challenges/time-tracking-dashboard-UIQ7167Jw). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
+- [Dictionary API](https://api.dictionaryapi.dev/)
 
 ## Author
 
