@@ -14,7 +14,7 @@ const WordHeading = ({
   return (
     <div className="mt-8 flex items-start justify-between md:items-center md:mt-12">
       <div className="space-y-4 md:space-y-6">
-        <div className="text-4xl font-bold md:text-6xl dark:text-orange-500">
+        <div className="text-4xl font-bold md:text-6xl dark:text-whiteColor1">
           {word}
         </div>
         <div className="text-xl text-accentColor md:text-2xl">{phonetic}</div>

@@ -8,9 +8,12 @@ const SynonymsAntonyms = ({ array, arrayType }) => {
           <div className="text-xl text-placeholderColor mb-4">{arrayType}</div>
           <div className="w-full">
             <div className="flex flex-wrap">
-              {array.map((arrayItem) => {
+              {array.map((arrayItem, id) => {
                 return (
-                  <div className="text-accentColor text-lg mb-2 mx-1 hover:underline hover:cursor-pointer transition-all">
+                  <div
+                    key={id}
+                    className="text-accentColor text-lg mb-2 mx-1 hover:underline hover:cursor-pointer transition-all"
+                  >
                     {arrayItem}
                   </div>
                 );

@@ -5,8 +5,8 @@ const Definitions = ({ definitions }) => {
   return (
     <div>
       <div className="text-xl text-placeholderColor mb-4">Meaning</div>
-      {definitions.map((def) => {
-        return <Definition def={def} />;
+      {definitions.map((def, id) => {
+        return <Definition key={id} def={def} />;
       })}
     </div>
   );

@@ -12,6 +12,9 @@ import Meanings from "./Meanings";
 import Sources from "./Sources";
 import { CircularProgress } from "@mui/material";
 
+// assets
+import catmeme from "../assets/catmeme-removebg-preview.png";
+
 const baseURL = "https://api.dictionaryapi.dev/api/v2/entries/en/";
 
 const Container = () => {
@@ -19,6 +22,7 @@ const Container = () => {
   const [result, setResult] = useState();
   const [audioSrc, setAudioSrc] = useState("");
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(false);
 
   useEffect(() => {
     if (searchedWord.trim() !== "") {
@@ -31,6 +35,11 @@ const Container = () => {
         .get(apiURL)
         .then((response) => {
           //   console.log(response);
+
+          if (error) {
+            setError(false);
+          }
+
           const apiResponse = response.data[0];
           if (apiResponse.phonetics) {
             apiResponse.phonetics.map((phonetic) => {
@@ -44,9 +53,10 @@ const Container = () => {
           setLoading(false);
         })
         .catch((err) => {
+          setError(true);
           console.log("inside error block");
-          //   console.log(err);
-          //   console.log(err.response.data);
+          console.log(err);
+          console.log(err.response.data);
           setLoading(false);
         });
     }
@@ -63,6 +73,28 @@ const Container = () => {
         <div className="flex justify-center mt-40">
           <CircularProgress />
         </div>
+      ) : error ? (
+        <>
+          <div className="flex flex-col items-center justify-start space-y-6 mt-4">
+            <div>
+              <img
+                className="rounded-full h-56 w-56 mr-6"
+                src={catmeme}
+                alt="crying cat meme"
+              />
+            </div>
+            <div className="space-y-2 text-center md:text-lg md:w-3/4 dark:text-placeholderColor">
+              <p>
+                Sorry pal, we couldn't find definitions for the word you were
+                looking for.
+              </p>
+              <p>
+                You can try the search again at later time or head to the web
+                instead.
+              </p>
+            </div>
+          </div>
+        </>
       ) : (
         <>
           {/* Word Heading */}

@@ -13,6 +13,8 @@ export default {
         placeholderColor: "hsl(0, 0%, 46%)",
         accentColor: "hsl(274, 82%, 60%)",
         darkColor1: "hsl(0, 0%, 2%)",
+        darkColor2: "hsl(0, 0%, 12%)",
+        whiteColor1: "hsl(0, 0%, 100%)",
       },
     },
   },

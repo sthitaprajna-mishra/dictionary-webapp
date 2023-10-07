@@ -6,7 +6,9 @@ const Meaning = ({ meaning }) => {
   return (
     <div className="mt-8">
       <div className="flex items-center space-x-1">
-        <div className="text-xl font-bold italic">{meaning.partOfSpeech}</div>
+        <div className="text-xl font-bold italic dark:text-whiteColor1">
+          {meaning.partOfSpeech}
+        </div>
         <div className="flex flex-col  w-full p-2">
           <div className="w-full p-1 border-b border-gray-400"></div>
           <div className="w-full p-1"></div>

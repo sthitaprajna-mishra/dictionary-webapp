@@ -5,7 +5,7 @@ import iconsearch from "../assets/icon-search.svg";
 import { useState } from "react";
 
 const Searchbar = ({ setSearchedWord }) => {
-  const [search, setSearch] = useState("");
+  const [search, setSearch] = useState("keyboard");
 
   const handleClick = (e) => {
     setSearchedWord(search);
@@ -22,14 +22,17 @@ const Searchbar = ({ setSearchedWord }) => {
   };
 
   return (
-    <div className="bg-inputColor rounded-xl flex items-center mt-10 py-4 outline-none focus-within:outline focus-within:outline-1 focus-within:outline-offset-0 focus-within:outline-accentColor">
+    <div
+      className="bg-inputColor rounded-xl flex items-center mt-10 py-4 outline-none focus-within:outline focus-within:outline-1 
+    focus-within:outline-offset-0 focus-within:outline-accentColor dark:bg-darkColor2"
+    >
       {/* Input */}
       <div className="w-11/12 pl-4 md:text-xl">
         <input
           value={search}
           onChange={(e) => handleKeyChange(e)}
           onKeyDown={handleKeyDownPress}
-          className="w-full bg-inherit text-fontColor font-semibold placeholder:text-placeholderColor placeholder:font-normal outline-none"
+          className="w-full bg-inherit text-fontColor font-semibold placeholder:text-placeholderColor placeholder:font-normal outline-none dark:text-white"
           type="text"
           placeholder="Search for a word"
         />
