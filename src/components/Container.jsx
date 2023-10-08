@@ -33,13 +33,9 @@ const Container = () => {
       setLoading(true);
       const apiURL = `${baseURL}${searchedWord}`;
 
-      //   console.log(searchedWord);
-
       axios
         .get(apiURL)
         .then((response) => {
-          //   console.log(response);
-
           if (error) {
             setError(false);
           }
@@ -74,7 +70,7 @@ const Container = () => {
   }, [searchedWord]);
 
   return (
-    <div className="border-1 border-green-600 col-span-12 mx-4 md:col-start-3 md:col-span-8 xl:col-start-4 xl:col-span-6">
+    <div className="col-span-12 mx-4 md:col-start-3 md:col-span-8 xl:col-start-4 xl:col-span-6">
       {/* Header */}
       <Header />
       {/* Searchbar */}
