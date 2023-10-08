@@ -10,13 +10,14 @@ import iconmoon from "../assets/icon-moon.svg";
 import iconmoondark from "../assets/icon-moon-dark.svg";
 
 const Header = () => {
-  const [theme, setTheme] = useState("light");
+  const [theme, setTheme] = useState("neutral");
   const [checked, setChecked] = useState(false);
 
   useEffect(() => {
     if (
       theme === "dark" ||
-      window.matchMedia("(prefers-color-scheme: dark)").matches
+      (theme !== "light" &&
+        window.matchMedia("(prefers-color-scheme: dark)").matches)
     ) {
       document.documentElement.classList.add("dark");
       setChecked(true);
@@ -40,20 +41,20 @@ const Header = () => {
 
         <Switch checked={checked} onClick={toggleTheme} />
 
-        {theme === "light" ? (
+        {theme === "dark" ? (
           <>
             <img
               className="w-6 h-6"
-              src={iconmoon}
-              alt="light mode moon icon"
+              src={iconmoondark}
+              alt="dark mode moon icon"
             />
           </>
         ) : (
           <>
             <img
               className="w-6 h-6"
-              src={iconmoondark}
-              alt="dark mode moon icon"
+              src={iconmoon}
+              alt="light mode moon icon"
             />
           </>
         )}
